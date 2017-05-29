@@ -12,7 +12,7 @@ pipeline {
                 // publish html
                 publishHTML target: [
                     allowMissing: false,
-                    alwaysLinkToLastBuild: false,
+                    alwaysLinkToLastBuild: true,
                     keepAll: true,
                     reportDir: 'static',
                     reportFiles: 'statistics.html',

@@ -1,5 +1,5 @@
 var webpack = require('webpack'),
-    visualizer = require('webpack-visualizer-plugin');
+  visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
 
