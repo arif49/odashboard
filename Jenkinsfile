@@ -8,6 +8,16 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm run build'
+
+                // publish html
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'static',
+                    reportFiles: 'statistics.html',
+                    reportName: 'Webpack Build Report'
+                ]
             }
         }
         stage('Test') {

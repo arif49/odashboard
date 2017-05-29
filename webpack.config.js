@@ -1,9 +1,13 @@
-var webpack = require('webpack');
+var webpack = require('webpack'),
+    visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
 
   devtool: '#inline-source-map',
   plugins: [
+    new visualizer({
+      filename: './statistics.html'
+    })
     /*
     new webpack.optimize.UglifyJsPlugin({
       compress: {
