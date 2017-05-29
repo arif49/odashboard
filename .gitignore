@@ -5,6 +5,7 @@
 node_modules
 npm-debug*
 static
+report
 config/clientconfig.js
 config/serverconfig.js
 .vscode*

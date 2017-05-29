@@ -1,12 +1,17 @@
 var webpack = require('webpack'),
-  visualizer = require('webpack-visualizer-plugin');
+  visualizer = require('webpack-visualizer-plugin'),
+  cleanWebpackPlugin=require('clean-webpack-plugin');
 
 module.exports = {
 
   devtool: '#inline-source-map',
   plugins: [
     new visualizer({
-      filename: './statistics.html'
+      filename: './webpack.html'
+    }),
+    new cleanWebpackPlugin(['dist', 'static'], {
+      verbose: true,
+      dry: false
     })
     /*
     new webpack.optimize.UglifyJsPlugin({
@@ -22,7 +27,7 @@ module.exports = {
     main: ['./src/main']
   },
   output: {
-    path: __dirname + '/static',
+    path:  __dirname + '/static',
     filename: 'bundle.js'
   }
 };
